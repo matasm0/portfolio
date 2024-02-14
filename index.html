@@ -3,20 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/home.css"/>
+    <title>Masato's Portfolio</title>
 </head>
 <body>
     <header>
-
+        <div class="logo">Logo</div>
+        <div class="links">
+            <a href="./pages/about.html">About</a>
+            <a href="./pages/projects/projects.html">Projects</a>
+            <a href="./pages/contact.html">Contact</a>
+        </div>
     </header>
     <main>
-        <div class="profile">Just say hi and then put links here (github, linkedin, whatever else)</div>
-        <div class="about"></div>
-        <div class="notable-projects"></div>
-        <div class="contact">Just have a button that goes to the contact page methinks</div>
+        <div class="profile section">
+            <div class="lhs">
+                <img src="imgs/Untitled.jpeg" alt="Profile Picture"/>
+            </div>
+            <div class="rhs">
+                <div class="text text-m">Just say hi and then put links here (github, linkedin, whatever else)</div>
+                <div class="links">
+                    <div class="link text-xs">LinkedIn</div>
+                    <div class="link text-xs">Email</div>
+                    <div class="link text-xs">Temp</div>
+                    <div class="link text-xs">Temp</div>
+                </div>
+            </div>
+        </div>
+        <div class="about section">
+            <h3 class="heading text-l">About Me</h3>
+            <div class="content text-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies leo in nisi feugiat, nec fringilla lorem fermentum. Maecenas id elit ante. Fusce a erat convallis, rutrum eros eu, cursus orci. Cras eu risus nunc. Curabitur et dui pharetra dolor molestie varius non aliquam tellus. Etiam vitae eros id lectus bibendum aliquam a non nibh. Aenean imperdiet tincidunt hendrerit. Maecenas diam ipsum, tincidunt at iaculis eu, accumsan et purus. Phasellus quis dapibus urna. Pellentesque lacinia condimentum dolor, eget cursus neque. In hac habitasse platea dictumst. </div>
+        </div>
+        <div class="notable-projects section">
+            <h3 class="heading text-l">Notable Projects</h3>
+            <div class="content text-s">
+                <div class="project-card">
+                    <img src="imgs/Untitled.jpeg" alt=""/>
+                    <div class="rhs">
+                        <h4 class="title">Project 1</h4>
+                        <div class="description text-xs">aaa a a a  a a a aa a a a a a Etiam ut erat nisi. Vivamus nec neque in sem feugiat fringilla. Donec eu odio at turpis porta congue. Donec eu vehicula dolor, sed aliquam nisi. Sed gravida ornare diam. Vestibulum sed auctor mi. Sed erat lectus, dapibus non faucibus mollis, vestibulum id purus. </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="imgs/Untitled.jpeg" alt=""/>
+                    <div class="rhs">
+                        <h4 class="title">Project 2</h4>
+                        <div class="description text-xs">Etiam ut erat nisi. Vivamus nec neque in sem feugiat fringilla. Donec eu odio at turpis porta congue. Donec eu vehicula dolor, sed aliquam nisi. Sed gravida ornare diam. Vestibulum sed auctor mi. Sed erat lectus, dapibus non faucibus mollis, vestibulum id purus. </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="imgs/Untitled.jpeg" alt=""/>
+                    <div class="rhs">
+                        <h4 class="title">Project 3</h4>
+                        <div class="description text-xs">Etiam ut erat nisi. Vivamus nec neque in sem feugiat fringilla. Donec eu odio at turpis porta congue. Donec eu vehicula dolor, sed aliquam nisi. Sed gravida ornare diam. Vestibulum sed auctor mi. Sed erat lectus, dapibus non faucibus mollis, vestibulum id purus. </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact section">
+            <button class="contact-button text-m">Contact Me</button>
+        </div>
     </main>
     <footer>
-        
+        <div class="placeholder">Thanks for checking out the site!</div>
     </footer>
 </body>
 </html>

@@ -1,0 +1,64 @@
+// Normalize?
+
+$primary: #2b2d31;
+$secondary: #313338;
+$tertiary: #383a40;
+$highlight: #3f4248;
+
+$text-color: rgb(225, 225, 225);
+
+$gutter-h: calc(7vw - 40px);
+
+@mixin flex($f: row, $j: space-around, $a: center) {
+    display: flex;
+    flex-direction: $f;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    color: $text-color;
+    font-family: Montserrat, 'Courier New', Courier, monospace;
+}
+
+.text-xs {font-size: 16px;}
+.text-s {font-size: 20px;}
+.text-m {font-size: 32px;}
+.text-l {font-size: 40px;}
+.text-xl {font-size: 80px;}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: $secondary;
+}
+
+main {
+    @include flex(column, space-between, normal);
+}
+
+header,
+footer {
+    @include flex($j: space-between);
+
+    padding: 10px $gutter-h;
+    background-color: $primary;
+    font-family: 'Montserrat';
+}
+
+header {
+    border-bottom: 3px solid $tertiary;
+}
+footer {
+    border-top: 3px solid $tertiary;
+}
