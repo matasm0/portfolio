@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - pw</title>
+    <link rel="stylesheet" href="../../styles/pw.css">
+</head>
+<body>
+    <header>
+        <a id="home" class="text-s" href="../../index.html">Home</a>
+        <div class="links">
+            <a class="text-s" href="../about.html">About</a>
+            <a class="text-s" href="./projects.html">Projects</a>
+            <a class="text-s" href="../contact.html">Contact</a>
+        </div>
+    </header>
+    <!-- I would like a big banner thingy thx -->
+    <main>
+        <div class="banner-thingy-kinda">
+            <img id="banner-img" src="../../imgs/pw-main.png" alt="An image of the program's menu">
+            <div class="banner-text">
+                <h1>Pw</h1>
+                <div class="text-s">A (currently) command line homebuilt password manager. Features encryption and backups and more.</div>
+                <div>
+                    <a href="https://github.com/matasm0/pw" style="width: fit-content">Github</a>
+                </div>
+            </div>
+        </div>
+        <h2>Overview</h2>
+        <div class="section text-s">
+            <p>PW is a password manager built using python that runs in the terminal. It features all of the important functions
+                of any good password manager: adding/checking/removing passwords, as well as generating random secure passwords.
+                <br><br>It encrypts the password file with a master password that you provide, ensuring that your passwords aren't
+                visible to any other programs or attackers who may get their hands on it. Additionally, it automatically backs up the
+                password file, in case anything goes wrong. Restoring from these backups is quick and easy. Similarly, it is easy to
+                move your passwords file across devices, and you can even put the file into your cloud storage to have it sync immediately
+                from anywhere. Check out more on the github page above.
+            </p>
+        </div>
+        <h2>The Why</h2>
+        <div class="section text-s">
+            pw was the first real personal project I undertook after learning python. I had always wanted a password manager, but never
+            trusted giving other companies by information. Makes sense then, right, to just make my own? My first iteration was the opposite
+            of secure, happily storing the passwords file in plaintext. Could be considered a slight security risk. <br><br>
+            My second and current iteration remedies this, as well as adding more features like backups. The new program takes a single master
+            password to unencrypt the password file. The file is encrypted using the password as the key, running the python library cryptography's
+            Fernet algorithm. 
+        </div>
+        <h2>The Why Not</h2>
+        <div class="section text-s">
+            While I had to learn a little bit about cryptography and computer security while making this program, I would say that that knowledge
+            made me less confident in the product I built, not more. The amount and type of attacks that are possible are far beyond the realm of my
+            understanding, as are the tools people have built to combat it. I do not claim to be an expert in computer security; I do not even claim to
+            be mediocre. This is a serious field and the actual security should be left to the actual experts. There are plenty of free password managers
+            out there that do everything this does and more, and better. These sites can definitely be trusted, and the benefits of having a password
+            manager far outweighs the risks that come from centralizing all of your passwords.<br><br>
+            With that being said, I do still actually use this daily as my password manager. Do as I say, not as I do.
+        </div>
+        <h2>Skills</h2>
+        <div class="section text-s">
+            In the process of building this project, I learned quite a bit about computer security and how passwords are stored securely by these other
+            more professional password managers. If I were to expand on this project, I would create an online version, similar to how Bitwarden does their
+            security. 
+        </div>
+        <h2>Showcase</h2>
+        <div class="section text-s">
+            <p>When starting the application, it checks whether or not the password file exists. Currently, this is hardcoded,
+                but the infrastructure is in place to allow the user to change this in the config. The application will prompt the user for a password,
+                and create the new password file.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img id="start1" src="../../imgs/pw-start1.png" alt="Program asking for password">
+                    <div class="text-xxs alt"><i>Program asks for password</i></div>
+                </div>
+            </div>
+            <p>
+                Once done, the main menu is displayed. Typing any of the options takes you into that function.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img id="menu1" src="../../imgs/pw-menu1.png" alt="Program showing menu">
+                    <div class="text-xxs alt"><i>Program shows menu</i></div>
+                </div>
+            </div>
+            <p>Typing quit at any point brings you back to the main menu.</p>
+            <div class="img-holder">
+                <div>
+                    <img id="menu2" src="../../imgs/pw-menu2.png" alt="User types q, program returns to main menu">
+                    <div class="text-xxs alt"><i>User typed "q", returns to main menu</i></div>
+                </div>
+            </div>
+            <p>The application can generate a password using "gen", or when creating a new account. The characters used in the password can be changed
+                inside of the function, in case the site does not allow certain characters.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img id="gen1" src="../../imgs/pw-gen1.png" alt="Program generating random 12 character passwords">
+                    <div class="text-xxs alt"><i>Program generating random 12 character passwords</i></div>
+                </div>
+                <div>
+                    <img id="gen2" src="../../imgs/pw-gen2.png" alt="User provided % and & as special characters, program generating new passwords using only those">
+                    <div class="text-xxs alt"><i>Program only generating with user provided "%&" characters</i></div>
+                </div>
+            </div>
+            <p>If you already know the inputs you need, you can immediately type it all in as an input stream.
+                By default, the master password cannot be taken in this way, but the "-l" flag followed by your password
+                bypasses this.<br><br>
+                An example, if we have a google account added, we can run "python3 pw -l hello check google", where "hello" is our
+                master password. The program will output the account's username and email, while copying the password to the clipboard.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img id="check1" src="../../imgs/pw-check1.png" alt="Program outputting user's username and email">
+                    <div class="text-xxs alt"><i>Result of above input stream</i></div>
+                </div>
+            </div>
+            <p>More advanced example, running "python3 pw -l hello add facebook bob bob@gmail.com bob123" immediately creates a new account
+                for Facebook. "hello" is the master password in this case, and "bob" is the username, "bob@gmail.com" is the email, "bob123" is
+                the password for the account.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img id="check2" src="../../imgs/pw-check2.png" alt="Program showing newly created facebook account">
+                    <div class="text-xxs alt"><i>Running check on the program shows the new account</i></div>
+                </div>
+            </div>
+
+            <p>The application makes several backups to hopefully prevent total data loss. A way to restore backups from the program itself
+                is a work in progress but for now you just replace the old passwords file. The backups are stored by default in the backups/ directory in
+                the same directory as the pw script. Choose the backup you want, and move it to where your pwd.txt file is. Delete your old pwd.txt, and rename
+                the backup to pwd.txt. The program will now use that file instead.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <div class="placeholder">Thanks for checking out the site!</div>
+    </footer>
+</body>
+</html>

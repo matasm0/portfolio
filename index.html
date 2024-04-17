@@ -8,11 +8,11 @@
 </head>
 <body>
     <header>
-        <div class="logo">Logo</div>
+        <a id="home" class="text-s" href="index.html">Home</a>
         <div class="links">
-            <a href="./pages/about.html">About</a>
-            <a href="./pages/projects/projects.html">Projects</a>
-            <a href="./pages/contact.html">Contact</a>
+            <a class="text-s" href="./pages/about.html">About</a>
+            <a class="text-s" href="./pages/projects/projects.html">Projects</a>
+            <a class="text-s" href="./pages/contact.html">Contact</a>
         </div>
     </header>
     <main>
@@ -21,47 +21,60 @@
                 <img src="imgs/Untitled.jpeg" alt="Profile Picture"/>
             </div>
             <div class="rhs">
-                <div class="text text-m">Just say hi and then put links here (github, linkedin, whatever else)</div>
-                <div class="links">
-                    <div class="link text-xs">LinkedIn</div>
-                    <div class="link text-xs">Email</div>
-                    <div class="link text-xs">Temp</div>
-                    <div class="link text-xs">Temp</div>
-                </div>
+                <div id="intro" class="text text-m">Hi, I'm Masato!<br>I'm a recent UCR graduate looking to apply my skills and knowledge.</div>
+                <button id="contact" onclick="window.location.href = 'pages/contact.html'">
+                    Contact Me!
+                </button>
             </div>
         </div>
         <div class="about section">
             <h3 class="heading text-l">About Me</h3>
-            <div class="content text-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies leo in nisi feugiat, nec fringilla lorem fermentum. Maecenas id elit ante. Fusce a erat convallis, rutrum eros eu, cursus orci. Cras eu risus nunc. Curabitur et dui pharetra dolor molestie varius non aliquam tellus. Etiam vitae eros id lectus bibendum aliquam a non nibh. Aenean imperdiet tincidunt hendrerit. Maecenas diam ipsum, tincidunt at iaculis eu, accumsan et purus. Phasellus quis dapibus urna. Pellentesque lacinia condimentum dolor, eget cursus neque. In hac habitasse platea dictumst. </div>
+            <div id="about" class="content text-s">Hi again. I'm Masato, a recent graduate from the University of California, Riverside. 
+                I majored in computer science and graduated with a 3.41 GPA.<br><br>
+                Though I had some light coding experience before college, most of my knowledge comes from my 4 years at university. The program
+                taught C++, and I later went on to learn Python by myself, as well as Javascript/HTML/CSS. Over that time, I created many different
+                projects with many different languages and technologies, both in and out of school. I've worked with machine learning, operating systems,
+                game development, web development; all the way down to reverse engineering and assembly.<br><br>
+                My favorite thing to do with code is
+                create programs that can help me in my day to day life, even if there may exist a better version of it already. I'm always eager to
+                learn and use new technologies to help me achieve my goals.
+                My dream is to create apps that people enjoy using, but most importantly, that I enjoy using.<br><br>
+                If you're interested, you can <a href="./pages/about.html">read more about me</a>, or check out some of <a href="./pages/projects/projects.html">my projects</a> below. Thanks for reading!
+            </div>
         </div>
         <div class="notable-projects section">
             <h3 class="heading text-l">Notable Projects</h3>
             <div class="content text-s">
-                <div class="project-card">
-                    <img src="imgs/Untitled.jpeg" alt=""/>
-                    <div class="rhs">
-                        <h4 class="title">Project 1</h4>
-                        <div class="description text-xs">aaa a a a  a a a aa a a a a a Etiam ut erat nisi. Vivamus nec neque in sem feugiat fringilla. Donec eu odio at turpis porta congue. Donec eu vehicula dolor, sed aliquam nisi. Sed gravida ornare diam. Vestibulum sed auctor mi. Sed erat lectus, dapibus non faucibus mollis, vestibulum id purus. </div>
+                <a class="project-card" href="./pages/projects/pw.html">
+                    <div class="project-content hover-glow">
+                        <img src="imgs/Untitled.jpeg" alt=""/>
+                        <div class="rhs">
+                            <h4 class="title">PW</h4>
+                            <div class="description text-xs">A (currently) command line homebuilt password manager. Features encryption and backups and more.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="imgs/Untitled.jpeg" alt=""/>
-                    <div class="rhs">
-                        <h4 class="title">Project 2</h4>
-                        <div class="description text-xs">Etiam ut erat nisi. Vivamus nec neque in sem feugiat fringilla. Donec eu odio at turpis porta congue. Donec eu vehicula dolor, sed aliquam nisi. Sed gravida ornare diam. Vestibulum sed auctor mi. Sed erat lectus, dapibus non faucibus mollis, vestibulum id purus. </div>
+                </a>
+                <a href="./pages/projects/gdrive.html" class="project-card">
+                    <div class="project-content hover-glow">
+                        <img src="imgs/Untitled.jpeg" alt=""/>
+                        <div class="rhs">
+                            <h4 class="title">GDrive Viewer</h4>
+                            <div class="description text-xs">An application for syncing a google drive cloud to your local device. Downloads changes from the cloud,
+                                as well as uploads any changes made locally. 
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="imgs/Untitled.jpeg" alt=""/>
-                    <div class="rhs">
-                        <h4 class="title">Project 3</h4>
-                        <div class="description text-xs">Etiam ut erat nisi. Vivamus nec neque in sem feugiat fringilla. Donec eu odio at turpis porta congue. Donec eu vehicula dolor, sed aliquam nisi. Sed gravida ornare diam. Vestibulum sed auctor mi. Sed erat lectus, dapibus non faucibus mollis, vestibulum id purus. </div>
+                </a>
+                <a href="./pages/projects/oc_p7.html" class="project-card">
+                    <div class="project-content hover-glow">
+                        <img src="imgs/Untitled.jpeg" alt=""/>
+                        <div class="rhs">
+                            <h4 class="title">Social Media Site</h4>
+                            <div class="description text-xs">An example social media site, similar to reddit. Allows for users to create accounts and posts, as well as comment and engage with other posts.</div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-        </div>
-        <div class="contact section">
-            <button class="contact-button text-m">Contact Me</button>
         </div>
     </main>
     <footer>

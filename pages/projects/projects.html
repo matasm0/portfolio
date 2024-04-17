@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="../../styles/projects.css">
+</head>
+<body>
+    <header>
+        <a id="home" class="text-s" href="../../index.html">Home</a>
+        <div class="links">
+            <a class="text-s" href="../about.html">About</a>
+            <a class="text-s" href="./projects.html">Projects</a>
+            <a class="text-s" href="../contact.html">Contact</a>
+        </div>
+    </header>
+    <main>
+        <h1 id="title">Projects</h1>
+        <div id="filters" class="text-s">
+            Filter:
+            <input class="filter active" value="All" type="button">
+            <input class="filter" value="Notable" type="button">
+            <input class="filter" value="Personal" type="button">
+            <input class="filter" value="OpenClassrooms" type="button">
+            <input class="filter" value="TheOdinProject" type="button">
+        </div>
+        <div class="project-list">
+            <div id="empty" class="text-s">Nothing to see here</div>
+            <a class="project-card Personal Notable" href="./pw.html">
+                <div class="project-content">
+                    <img src="../../imgs/Untitled.jpeg" alt=""/>
+                    <div class="rhs">
+                        <h4 class="title">PW</h4>
+                        <div class="description text-xs">A (currently) command line homebuilt password manager. Features encryption and backups and more.</div>
+                    </div>
+                </div>
+            </a>
+            <a class="project-card Personal Notable" href="./gdrive.html">
+                <div class="project-content">
+                    <img src="../../imgs/Untitled.jpeg" alt=""/>
+                    <div class="rhs">
+                        <h4 class="title">GDrive Viewer</h4>
+                        <div class="description text-xs">An application for syncing a google drive cloud to your local device. Downloads changes from the cloud,
+                            as well as uploads any changes made locally. 
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="project-card OpenClassrooms Notable" href="./oc_p7.html">
+                <div class="project-content">
+                    <img src="../../imgs/Untitled.jpeg" alt=""/>
+                    <div class="rhs">
+                        <h4 class="title">Social Media Site</h4>
+                        <div class="description text-xs">An example social media site, similar to reddit. Allows for users to create accounts and posts, as well as comment and engage with other posts.</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div class="placeholder">Thanks for checking out the site!</div>
+    </footer>
+</body>
+<script src="../../scripts/projects.js"></script>
+</html>

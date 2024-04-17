@@ -1,0 +1,95 @@
+@use "basics" as *;
+
+main {
+    padding: 0 calc($gutter-h + 20px);
+    margin-top: 60px;
+    width: 100vw;
+
+    line-height: 1.6;
+}
+
+h1, h2 {
+    margin-bottom: 30px;
+}
+
+.section {
+    margin-bottom: 45px;
+    padding: 0 12px;
+}
+
+.img-holder {
+    @include flex(column, center, center);
+
+    margin: 30px;
+    gap: 40px;
+
+    .alt {
+        text-align: center;
+    }
+}
+
+img {
+    width: 500px;
+
+    border: 3px solid $primary;
+    border-radius: 12px;
+    box-shadow: 0 0 20px 10px $primary;
+}
+
+.banner-thingy-kinda {
+    @include flex(row, space-around, center);
+
+    height: 400px;
+    width: 100%;
+
+    margin-bottom: 60px;
+
+    gap: 10vw;
+    padding: 0 60px;
+
+    .banner-text {
+        @include flex(column, center, flex-start);
+
+        width: 50%;
+        gap: 20px;
+        a {
+            padding: 10px 20px;
+            border: 3px solid $highlight;
+            border-radius: 20px;
+            box-shadow: 0 0 15px 10px $primary;
+        }
+    }
+
+    img {
+        width: 50%;       
+    }
+}
+
+h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+@media (max-width: 1000px) {
+    .banner-thingy-kinda {
+        @include flex(column, center, center);
+        margin-top: 60px;
+        height: auto;
+        gap: 5vh;
+
+        .banner-text, img, h1, div {
+            width: 100%;
+        }
+
+        .banner-text {
+            text-align: center;
+            gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    img {
+        width: 70vw;
+    }
+}

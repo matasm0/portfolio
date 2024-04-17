@@ -9,13 +9,33 @@
 
     img {
         height: 400px;
-        border: 4px solid whitesmoke;
+        border: 4px solid $primary;
         border-radius: 40px;
-        box-shadow: 0px 0px 15px 3px gray;
+        box-shadow: 0 0 20px 10px $primary;
     }
 
-    .links {
-        @include flex();
+    #intro {
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    #contact {
+        width: 220px;
+        height: 50px;
+
+        border: 3px solid $highlight;
+        border-radius: 16px;
+        background-color: $primary;
+        box-shadow: 0 0 20px 10px $primary;
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $highlight;
+            box-shadow: 0 0 7px 2px $tertiary;
+        }
     }
 }
 
@@ -49,36 +69,58 @@
     }
 }
 
+#about > a {
+    color: lightcoral;
+    cursor: pointer;
+
+    &:hover {
+        color: lightgreen;
+    }
+}
+
 .notable-projects {
+    margin-bottom: 50px;
+
     .content {
         @include flex(row, space-between, stretch);
 
         margin-top: 20px;
         gap: 30px;
+        padding: 20px 1vw;
 
         .project-card {
-            @include flex(column, flex-start, center);
-        
             background-color: $highlight;
-            border-radius: 8px;
+            border-radius: 16px;
+            border: 3px solid $primary;
+            box-shadow: 0 0 20px 10px $primary;
             overflow: hidden;
             
             width: 30%;
 
-            padding: 10px;
+            .project-content {
+                @include flex(column, flex-start, center);
 
-            img {
-
-            }
-
-            .rhs {
-                @include flex(column, flex-start);
+                padding: 10px;
+                gap: 10px;
 
                 height: 100%;
-                margin-top: 8px;
-
-                .description {
-                    text-align: center;
+                
+                img {
+                    
+                }
+                
+                .rhs {
+                    @include flex(column, flex-start);
+                    
+                    height: 100%;
+                    margin-top: 8px;
+                    
+                    gap: 10px;
+                    
+                    .description {
+                        text-align: center;
+                        line-height: 1.4;
+                    }
                 }
             }
         }
@@ -97,5 +139,93 @@
         background-color: $highlight;
         border-radius: 20px;
         border: 2px solid whitesmoke;
+    }
+}
+
+#about {
+    line-height: 1.6;
+}
+
+@media (max-width: 1000px) {
+    .profile {
+        #intro {
+            text-align: center;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+        
+        .rhs {
+            @include flex(column, flex-start, center);
+            #intro {
+                text-align: center;
+            }
+        }
+    }
+
+    .section {
+        .content {
+            padding: 20px 4vw;
+        }
+    }
+
+    .notable-projects {
+        .content {
+            flex-direction: column;
+
+            .project-card {
+
+                width: 100%;
+                
+                .project-content {
+                    @include flex(row, stretch, center);
+
+                    .rhs {
+                        padding: 0 5%;
+                        gap: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .profile {
+        @include flex(column, flex-start, center);
+        img {
+            width: 200px;
+            height: auto;
+        }
+    }
+
+    .heading {
+        &:after {
+            flex: 1 1 auto;
+        }
+    }
+
+    .notable-projects {
+        .content {
+            .project-card {
+                .project-content {
+                    @include flex(column, flex-start, center);
+                    img {
+                        width: 160px;
+                        height: auto;
+                    }
+
+                    .rhs {
+                        gap: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .section {
+        padding: 0;
     }
 }

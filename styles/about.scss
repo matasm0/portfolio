@@ -1,0 +1,35 @@
+@use "basics" as *;
+
+main {
+    padding: 0 $gutter-h;
+    margin-top: 80px;
+}
+
+#title {
+    margin-bottom: 120px;
+    width: 100%;
+    text-align: center;
+}
+
+.content {
+    padding: 0 10px;
+    line-height: 1.5;
+}
+
+.section {
+    padding: 0 15px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+#div1 {
+    padding: 15px 0 0 50px;
+
+    li {
+        color: rgb(248, 169, 169);
+        margin-bottom: 7px;
+    }
+}

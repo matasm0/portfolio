@@ -7,7 +7,7 @@ $highlight: #3f4248;
 
 $text-color: rgb(225, 225, 225);
 
-$gutter-h: calc(7vw - 40px);
+$gutter-h: calc(9vw - 20px);
 
 @mixin flex($f: row, $j: space-around, $a: center) {
     display: flex;
@@ -30,6 +30,7 @@ $gutter-h: calc(7vw - 40px);
     font-family: Montserrat, 'Courier New', Courier, monospace;
 }
 
+.text-xxs {font-size: 14px;}
 .text-xs {font-size: 16px;}
 .text-s {font-size: 20px;}
 .text-m {font-size: 32px;}
@@ -37,6 +38,8 @@ $gutter-h: calc(7vw - 40px);
 .text-xl {font-size: 80px;}
 
 body {
+    @include flex(column, space-between, normal);
+
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
@@ -44,21 +47,91 @@ body {
 }
 
 main {
-    @include flex(column, space-between, normal);
+    @include flex(column, flex-start, normal);
+    flex-grow: 100;
 }
 
 header,
 footer {
     @include flex($j: space-between);
 
-    padding: 10px $gutter-h;
+    height: 50px;
+
+    padding: 0px $gutter-h;
     background-color: $primary;
     font-family: 'Montserrat';
 }
 
 header {
+    width: 100vw;
+
     border-bottom: 3px solid $tertiary;
+
+    a {
+        width: 100%;
+        height: 100%;
+        width: 150px;
+
+        text-align: center;
+        padding-top: 11px;
+
+        background-color: $primary;
+    }
+
+    .links {
+        @include flex();
+        height: 100%;
+
+        padding: 0;
+
+        a {
+            width: 150px;
+        }
+    }
+
+    a:hover {
+        background-color: $tertiary;
+    }
 }
+
 footer {
     border-top: 3px solid $tertiary;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hover-glow:hover {
+    background-color: $tertiary;
+}
+
+@media (max-width: 1000px) {
+    
+}
+
+@media (max-width: 700px) {
+    .text-xxs {font-size: 12px;}
+    .text-xs {font-size: 14px;}
+    .text-s {font-size: 16px;}
+    .text-m {font-size: 22px;}
+    .text-l {font-size: 30px;}
+    .text-xl {font-size: 40px;}
+
+    header{
+        padding: 0;
+
+        overflow: hidden;
+
+        a {
+            width: 80px;
+        }
+
+        .links {
+            gap: 2vw;
+            a {
+                width: 80px;
+            }
+        }
+    }
 }

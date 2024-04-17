@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: rgb(225, 225, 225);
+  font-family: Montserrat, "Courier New", Courier, monospace;
+}
+
+.text-xxs {
+  font-size: 14px;
+}
+
+.text-xs {
+  font-size: 16px;
+}
+
+.text-s {
+  font-size: 20px;
+}
+
+.text-m {
+  font-size: 32px;
+}
+
+.text-l {
+  font-size: 40px;
+}
+
+.text-xl {
+  font-size: 80px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: normal;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #313338;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: normal;
+  flex-grow: 100;
+}
+
+header,
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0px calc(9vw - 20px);
+  background-color: #2b2d31;
+  font-family: "Montserrat";
+}
+
+header {
+  width: 100vw;
+  border-bottom: 3px solid #383a40;
+}
+header a {
+  width: 100%;
+  height: 100%;
+  width: 150px;
+  text-align: center;
+  padding-top: 11px;
+  background-color: #2b2d31;
+}
+header .links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+header .links a {
+  width: 150px;
+}
+header a:hover {
+  background-color: #383a40;
+}
+
+footer {
+  border-top: 3px solid #383a40;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hover-glow:hover {
+  background-color: #383a40;
+}
+
+@media (max-width: 700px) {
+  .text-xxs {
+    font-size: 12px;
+  }
+  .text-xs {
+    font-size: 14px;
+  }
+  .text-s {
+    font-size: 16px;
+  }
+  .text-m {
+    font-size: 22px;
+  }
+  .text-l {
+    font-size: 30px;
+  }
+  .text-xl {
+    font-size: 40px;
+  }
+  header {
+    padding: 0;
+    overflow: hidden;
+  }
+  header a {
+    width: 80px;
+  }
+  header .links {
+    gap: 2vw;
+  }
+  header .links a {
+    width: 80px;
+  }
+}
+main {
+  padding: 0 calc(9vw - 20px);
+  margin-top: 80px;
+}
+
+#title {
+  margin-bottom: 120px;
+  width: 100%;
+  text-align: center;
+}
+
+.content {
+  padding: 0 10px;
+  line-height: 1.5;
+}
+
+.section {
+  padding: 0 15px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+#div1 {
+  padding: 15px 0 0 50px;
+}
+#div1 li {
+  color: rgb(248, 169, 169);
+  margin-bottom: 7px;
+}/*# sourceMappingURL=about.css.map */

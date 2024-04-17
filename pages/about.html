@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/about.css">
+    <title>About me</title>
+</head>
+<body>
+    <header>
+        <a id="home" class="text-s" href="../index.html">Home</a>
+        <div class="links">
+            <a class="text-s" href="./about.html">About</a>
+            <a class="text-s" href="./projects/projects.html">Projects</a>
+            <a class="text-s" href="./contact.html">Contact</a>
+        </div>
+    </header>
+    <main>
+        <h1 id="title">About Me</h1>
+        <div class="content">
+            <h2 id="intro">Intro</h2>
+            <div class="section">
+                <p class="text-s">For maybe the third time, hello! I'm Masato. I graduated from the University of California,
+                    Riverside in the June of 2023. I majored in computer science, and finished the course with
+                    a GPA of 3.41. I love all things tech, and have a passion for creating and learning.
+                </p>
+            </div>
+            <h2 id="me">Who I am</h2>
+            <div class="section">
+                <p class="text-s">I'm a Japan born, half Japanese half African human being currently living on the planet Earth.
+                    I came to America at a young age, and have lived here the large majority of my life. In my childhood,
+                    I learned English from school and the people around me, as well as some Japanese at home (though I've
+                    forgotten the vast majority of it...). My biggest responsibilities so far have been two pet hamsters
+                    (RIP), which makes me adequately prepared to take on any task that is given to me.
+                    <br><br>
+                    I've loved tech and computers since I was little. I remember downloading <a href="https://scratch.mit.edu/">Scratch</a>
+                    and playing around using what limited knowledge and understanding I had. Sticking those logic blocks together and getting
+                    increasingly upset as the cat did nothing that I wanted it to was a highlight that's stuck with me this whole time. 
+                    I'm sure I made a beautifully well designed triple A game at some point, but I've since lost all those files so we'll never know.
+                    Now, as an older and more experienced developer, I get to watch as my code inexplicably deletes the entire contents of my
+                    google drive cloud... out of spite? Or a bug I made. Probably just spite. 
+                    <br><br>Progress!<br><br>
+                    On the hardware side, I've custom built 2 PCs for myself, both of which are still (somewhat) functional to this day.
+                    Maybe its not too impressive anymore (there's many great tutorials out there), but as a professional thing breaker,
+                    I think I deserve some credit. I've played around with a breadboard and Arduino, and even made a little "1D" racing game on
+                    it. A line of LEDs on the board show you your proximity to walls, and your job is to make it around the racetrack with no other
+                    information. I would love to get my hands on a Raspberry Pi someday as well.
+                    <br><br>
+                    Outside of programming, my hobbies include gaming as well as playing video games. I'm an avid enjoyer of fast paced high octane
+                    games such as Minecraft and Tetris. A connoisseur, even. I also dabble in rhythm games, in which I am spectacularly mediocre.
+                    All of this is, of course, solely for research purposes. How would one know how to develop software if they did not also use it?
+                    But of course, I have other hobbies as well! Including...
+                    <br><br>
+                    ...
+                    <br><br>
+                    Next section...
+                </p>
+            </div>
+            <h2 id="education">Education</h2>
+            <div class="section">
+                <p class="text-s">For formal education, I initially got into UCR as a math major. As much as I love math (I don't), I made sure to take the entry computer science courses
+                    and switched my major at the start of my second year. The program at UCR teaches C++ in the lower level introductory courses, but
+                    many of the more advanced courses introduce other languages and technologies depending on what was being taught. I've worked with:
+                </p>
+                <ul id='div1' class="text-s">
+                    <li>Operating Systems. Using the RISC-V educational CPU/kernel, I've implemented basic things such as 
+                        locks and process management/scheduling all the way to memory management and allocation.  
+                    </li>
+                    <li>Virtual Reality. Using the Unity game engine, I created a small experience that features strange Non Euclidean geometries that would not be possible
+                        in the real world. Things such as tunnels that appeared shorter on the inside than outside, stuff like that.
+                    </li>
+                    <li>Embedded Systems. Learned state machines and how to use them for designing the function of machines, from traffic lights to arcade games.</li>
+                    <li>Computer Security. <b>Ethically</b> hacked encrypted passwords, as well as reverse engineered software at the binary level to change the functionality.</li>
+                </ul>
+                <br>
+                <p class="text-s">
+                    Outside of school, I took a certificate program with OpenClassrooms on Website Development. It was a 6 month program aimed at teaching web dev all the way
+                    from the basics of HTML and CSS to more advanced technologies such as React. Since it was based on projects, I was able to immediately use anything I learned,
+                    which made it far more effective than just reading about it in a textbook. I learned and used servers (Express), databases (SQL and NoSQL/MongoDB), frameworks (Bootstrap),
+                    and standards such as REST for APIs. I learned how to safely take and handle user inputs, including the careful hashing/storing of passwords. Session cookies, local storage,
+                    web token signing... all that and more.
+                    <br><br>
+                    In my own time, I learned Python with a friend, and it quickly became one of my favorite coding languages to use. It makes creating small scripts and 
+                    apps incredibly easy. I'll touch on my projects more in the next section. It also helps that it is a lot friendlier than C++, doing a lot of the menial
+                    tasks in the background. I've also messed with some mobile app development, using Google's Dart framework Flutter. 
+                </p>
+            </div>
+            <h2 id="experience">Experience</h2>
+            <div class="section">
+                <p class="text-s">I've just realized I've put all my school "experience" in the previous section, so I'll just mention my personal projects. I
+                    actually enjoy coding outside of work/school (crazy) and I very much enjoy making my own software solutions to problems I may
+                    face. Python gave me the ability to do that quickly and easily, and so most (all) of my coding projects are in Python.
+                    <br><br>
+                    My first project was a password manager to keep manage all of my passwords. I was suspicious of other websites keeping track of such
+                    sensitive information, so I decided that it would be best if I handle it myself. This... is a terrible idea for many reasons. But who needs reason?
+                    My first iteration did all the things one would want in a password manager, including creating accounts and even... generating passwords.
+                    It had one small and insignificant issue that I'm sure could never result in security concerns. It had a funny little tendency of
+                    storing all of your passwords in plain text. And then to further increase my attack surface, I made sure to upload this unencrypted plain text file,
+                    containing very sensitive passwords such as my bank, onto my google drive. Since then I have worked on a new iteration of the program, which actually
+                    encrypts the password file and does more cool things like backups. For your health and safety, I have not uploaded the code for the first iteration, but
+                    if you are curious you can check out the current program <a href="">here.</a> This project taught me a lot of the basics of python, as well as
+                    encryption and the vastly complicated field of computer security.
+                    <br><br>
+                    Continuing the trend of making worse versions of apps that already exist, my biggest project is my version of the Google Drive for Desktop app but on
+                    Linux. The app wasn't available when I switched to Linux, which was devastating since it had been such a convenient tool. It taught me a lot about working
+                    with actual APIs, and managing files. It is still a work in progress but you can see where it is at <a href="">here.</a>
+                    <br><br>
+                    The final project for the OpenClassrooms program was an example social media site, where users can create accounts and make posts/comments on those posts.
+                    This was a great project as I had to create both the frontend and the backend for the website. This gave me experience working with APIs not only from the
+                    client perspective but the end server perspective as well. 
+                    <br><br>
+                    Outside of coding, I have had two jobs, in fast food and in retail. While most of those skills obviously don't translate over well into a coding job,
+                    I did get to learn and practice working under and with people for a common goal, as well as providing service and assistance for customers. People say I am
+                    very hard working and dedicated, and I would like to agree. I always show up and perform to the best of my abilities, and always look for
+                    opportunities to take the initiative to solve problems.
+                </p>
+            </div>
+            <h2 id="contact">Contact</h2>
+            <div class="section">
+                <p class="text-s">I'm sure all of this has greatly elevated your view of me, and you would love to reach out. You can check out the
+                    <a href="contact.html">Contact</a> page, but I doubt I've gone through and actually finished it. So here are the sites that
+                    I am most likely to remember to check.
+                    <div id="links">
+                        <div class="link"><a href="">LinkedIn</a></div>
+                    </div>
+                </p>    
+            </div>
+            <h2 id="extras">Extras</h2>
+            <div class="section">
+                <p></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="placeholder">Thanks for checking out the site!</div>
+    </footer>
+</body>
+</html>
