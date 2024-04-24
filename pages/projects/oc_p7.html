@@ -17,7 +17,7 @@
     </header>
     <main>
         <div class="banner-thingy-kinda">
-            <img id="banner-img" src="" alt="">
+            <img id="banner-img" src="../../imgs/oc_p7-main.png" alt="">
             <div class="banner-text">
                 <h1>Social Media Example Site</h1>
                 <div class="text-s"></div>
@@ -29,11 +29,117 @@
         <h2>Overview</h2>
         <div class="section text-s">
             <p>
+                The goal of the project was to make a website where users can create an account, log in, make
+                posts, and comment on other people's posts. It is similar in form and function to the social media
+                website 9gag. I was expected to keep track of all of the users, as well as all of the posts and
+                who had posted/interacted with them. This allows a user who liked a post to see that liked status
+                across multiple sessions.
             </p>
+        </div>
+        <h2>Tools Used</h2>
+        <div class="section text-s">
+            <p>
+                The main tool used in the creating the project was React, a JavaScript library that alters the way
+                websites are coded. Instead of dealing with separate HTML, CSS and JavaScript files, React
+                provides components that can be used to build the design and functionality of the site. This
+                means objects like buttons can be created and have their effects customized right in the same
+                bit of code. It also works very well with CSS preprocessors, libraries that allow CSS to be written
+                in a form more akin to a standard programming language, unlocking loops and more flexible
+                variables. <br><br>
+                Bootstrap is a CSS framework that provides decent looking defaults for many common
+                components, as well as giving easy ways to customize the looks for many different objects at
+                once. For example, if the primary color of the site was green, and now you want it to be blue,
+                changing the whole site is as simple as changing one variable. This provided the baseline for
+                many of the HTML components. <br><br>
+                The main backend tool used in the project is Express. It is a library that provides a server with
+                RESTful (HTTP) API calls that can be easily implemented. It can be used with actual live remote
+                servers, but in my case, I just run it locally with local server code.
+                For the storage of user data, I initially used MongoDB. It is a cloud storage platform built around
+                providing easy to access and understand databases for servers. Models can be created for the
+                data, which are templates that ensure that all data going into the database are of a certain type,
+                and contain all of the required information. So a user model would have a username field that is
+                of type string. <br><br>
+                For storage, I also used SQLite, a lightweight local SQL database library. It does everything a
+                normal SQL database does, while fitting easily inside applications as it is just a library instead of
+                its own app.
+            </p>
+        </div>
+        <h2>Showcase</h2>
+        <div class="section text-s">
+            <p>
+                As a user of the site, you are initially taken to the home page, where you can either sign up for an
+                account or log into an existing one.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img src="../../imgs/oc_p7-main2.png" alt="">
+                    <div class="text-xxs alt"><i>Home page</i></div>
+                </div>
+            </div>
+            <p>
+                Once in, the user can change their profile picture and their username, but can also choose not
+                to and use the beautiful default profile picture and their email as their username. These can both
+                be changed at any time.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img src="../../imgs/oc_p7-create1.png" alt="">
+                    <div class="text-xxs alt"><i>User creation screen</i></div>
+                </div>
+            </div>
+            <p>
+                They are then taken to the main post page, where they can see all of the posts from other users
+                in a scrollable list. Posts will appear light purple if they have not been read (clicked), and gray if
+                they have. Above the posts is a button that allows the user to filter out all of the posts they have
+                already read.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img src="../../imgs/oc_p7-home2.png" alt="">
+                    <div class="text-xxs alt"><i>Posts page</i></div>
+                </div>
+            </div>
+            <p>
+                Each post has its own page, where users can interact by posting comments on the post itself as
+                well as comments on other users' comments.
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img src="../../imgs/oc_p7-post1.png" alt="">
+                    <div class="text-xxs alt"><i>Post page with example comments</i></div>
+                </div>
+            </div>
+            <p>
+                Every user has their own page where they can see posts and comments that they've or others
+                made, along with posts and comments that they have liked. If they are on their own user page,
+                they can also edit their username and profile picture here.
+            </p>
+            <div class="img-holder">
+                <img src="../../imgs/oc_p7-user1.png" alt="">
+                <div class="text-xxs alt"><i>User page</i></div>
+            </div>
+            <p>
+                Luckily, as soon as you figure out this site isn't all its cracked up to be, you do have an easy one
+                click no confirmation no take backs way to delete your account and forget the site ever existed.
+            </p>
+            <div class="img-holder">
+                <img src="../../imgs/oc_p7-settings1.png" alt="">
+                <div class="text-xxs alt"><i>User settings page</i></div>
+            </div>
+            <p>
+                Which is also reflected for other users
+            </p>
+            <div class="img-holder">
+                <div>
+                    <img src="../../imgs/oc_p7-comment2.png" alt="">
+                    <div class="text-xxs alt"><i>Deleted user's comment</i></div>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
         <div class="placeholder">Thanks for checking out the site!</div>
     </footer>
+    <script src="../../scripts/project.js"></script>
 </body>
 </html>
