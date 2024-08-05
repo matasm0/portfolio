@@ -59,7 +59,8 @@ img {
     }
 
     img {
-        width: 500px;   
+        width: 500px;
+        max-width: 95vw;
     }
 }
 
@@ -81,7 +82,9 @@ h1 {
     background-color: rgba(0,0,0,0.4);
 
     img {
-        min-width: 400px;
+        min-width: 50vw;
+        max-width: 90vw;
+
         // width: 100%;
         height: fit-content;
         max-height: 80vh;
@@ -110,6 +113,7 @@ h1 {
 }
 
 @media (max-width: 700px) {
+    .img-holder
     img {
         width: 70vw;
     }
