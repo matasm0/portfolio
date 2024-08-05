@@ -1,83 +1,135 @@
 @use "basics" as *;
 
+header,
+footer,
+section {
+    background-color: $primary;
+    color: $tertiary;
+}
+
 .profile {
-    @include flex($j: center);
-    max-width: 1200px;
-    gap: max(60px, 10vw);
+    @include flex($j: flex-start);
+
+    gap: min(max(20px, 10vw), 200px);
+    padding: 0 $gutter-h;
+    height: calc(100vh - 60px);
+    max-height: 60rem;
 
     align-self: center;
 
     .lhs {
         height: 400px;
         width: 350px;
+        margin-left: 50px;
         overflow: hidden;
         border: 4px solid $primary;
         border-radius: 40px;
         box-shadow: 0 0 20px 10px $primary;
         flex-shrink: 0;
+
         img {
             height: 1000px;
+            max-height: 70vh;
+            min-height: 400px;
             object-fit: cover;
-            margin: -140% -55%;
+            // margin: -140% -55%;
         }
     }
-        
-    #intro {
-        margin-bottom: 30px;
-        line-height: 1.5;
-    }
 
-    #contact {
-        width: 220px;
-        height: 50px;
+    .rhs{
+        @include flex($f: column, $j: center, $a: flex-start);
+        width: 500px;
+        height: 100%;
+        gap: 26px;
 
-        border: 3px solid $highlight;
-        border-radius: 16px;
-        background-color: $primary;
-        box-shadow: 0 0 20px 10px $primary;
+        #intro {
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
 
-        font-size: 20px;
+        .intro-links {
+            @include flex();
+            gap: 60px;
+            a {
+                @include flex();
+                gap: 4px;
 
-        cursor: pointer;
+                &:hover {
+                    color: $highlight;
+                    transition: color .3s;
+                }
+                transition: color .2s ease-in;
+            }
+        }
 
-        &:hover {
-            background-color: $highlight;
-            box-shadow: 0 0 7px 2px $tertiary;
+        #contact {
+            width: 220px;
+            height: 50px;
+
+            // border: 3px solid $contrast-light;
+            border: none;
+            border-radius: 12px;
+            background-color: $tertiary;
+            color: $primary;
+            font-weight: 500;
+            box-shadow: 0 0 6px 1px $tertiary;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            &:hover {
+                // background-color: rgb(157, 153, 153);
+                transition: all .3s;
+                box-shadow: 0 0 15px 2px $tertiary;
+            }
+            transition: all .1s;
         }
     }
 }
 
-.section {
-    padding: 0 $gutter-h;
-    margin-top: 70px;
+.skills {
+    padding-top: 0;
 
-    .content {
-        padding: 20px 80px;
+    .skills-list {
+        @include flex($f: column, $j: flex-start, $a: flex-start);
+
+        line-height: 1;
+
+        background-color: #d8d8d8;
+        border-radius: 20px;
+        padding: 20px;
+        gap: 30px;
+        color: black;
+
+        h3 {
+            margin-bottom: 15px;
+            // margin-top: 20px;
+        }
+
+        ul {
+            @include flex($j: flex-start);
+            flex-wrap: wrap;
+
+            gap: 60px;
+
+            li {
+                @include flex($f: column);
+
+                img {
+                    width: 80px;
+                    height: 80px;
+
+                    margin-bottom: 10px;
+
+                    object-fit: contain;
+                }
+            }
+        }
     }
 }
 
-.heading {
-    width: 100%;
-    display: flex;
-    gap: 15px;
-    &:after {
-        // Thank you https://stackoverflow.com/a/62358739
-        content: '';
-        flex: 10 1 auto;
-        border-bottom: solid 2px #fff;
-
-        align-self: center;
-    }
-    &:before {
-        content: "";
-        flex: 1 1 auto;
-        border-bottom: solid 2px #fff;
-
-        align-self: center;
-    }
-}
-
-#about > a {
+#about>a {
     color: lightcoral;
     cursor: pointer;
 
@@ -87,23 +139,32 @@
 }
 
 .notable-projects {
-    margin-bottom: 50px;
 
     .content {
         @include flex(row, space-between, stretch);
 
-        margin-top: 20px;
-        gap: 30px;
-        padding: 20px 1vw;
+        width: 100%;
+        // padding: 20px 3vw;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 0 20px;
 
         .project-card {
-            background-color: $highlight;
+            background-color: $contrast-light;
             border-radius: 16px;
-            border: 3px solid $primary;
-            box-shadow: 0 0 20px 10px $primary;
+            // border: 3px solid $primary;
+            box-shadow: 0 0 20px 10px #242428;
             overflow: hidden;
-            
+
+            max-width: 400px;
             width: 30%;
+
+            &:hover {
+                background-color: #4f5259;
+                box-shadow: 0 0 20px 2px #4f5259;
+                transition: all .2s;
+            }
+            transition: all .1s;
 
             .project-content {
                 @include flex(column, flex-start, center);
@@ -112,26 +173,27 @@
                 gap: 10px;
 
                 height: 100%;
-                
+
                 .lhs {
                     @include flex(row, center, center);
                     height: 200px;
+
                     // flex-shrink: 0;
-                    img {  
+                    img {
                         height: 100%;
                         width: 100%;
                         object-fit: contain;
                     }
                 }
-                
+
                 .rhs {
                     @include flex(column, flex-start);
-                    
+
                     height: 50%;
                     margin-top: 8px;
-                    
+
                     gap: 10px;
-                    
+
                     .description {
                         text-align: center;
                         line-height: 1.4;
@@ -145,38 +207,41 @@
 .contact {
     @include flex(column, center, center);
     width: 100%;
-    margin-bottom: 40px ;
+    margin-bottom: 40px;
 
     .contact-button {
         width: 250px;
         height: 70px;
 
-        background-color: $highlight;
+        background-color: $contrast-light;
         border-radius: 20px;
         border: 2px solid whitesmoke;
     }
 }
 
-#about {
-    line-height: 1.6;
-}
-
 @media (max-width: 1000px) {
     .profile {
+        padding: 0;
+        // padding-right: 3vw;
+        width: 100%;
+        gap: 5vw;
+        justify-content: center;
+
         #intro {
             text-align: center;
         }
 
         .lhs {
+        // I think just have a headshot
             width: 250px;
-            img {
-                margin: -190% -100%;
-            }
+            height: 250px;
+            margin: 0;
+            margin-left: 10px;
         }
-        
+
         .rhs {
-            @include flex(column, flex-start, center);
-            #intro {
+            @include flex(column, center, center);
+            #intro2 {
                 text-align: center;
             }
         }
@@ -188,16 +253,38 @@
         }
     }
 
+    .skills {
+        .skills-list {
+            ul {
+                li {
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+
     .notable-projects {
         .content {
             flex-direction: column;
+            padding: 0px calc($gutter-h - 40px);
+            row-gap: 40px;
 
             .project-card {
 
                 width: 100%;
-                
+                // height: 200px;
+                max-width: none;
+
                 .project-content {
                     @include flex(row, stretch, center);
+
+                    .lhs {
+                        width: 250px;
+                        flex-shrink: 0;
+                    }
 
                     .rhs {
                         padding: 0 5%;
@@ -209,14 +296,28 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .profile {
         @include flex(column, flex-start, center);
-        .lhs {
-            width: 300px;
+        gap: 30px;
+        margin-top: 20px;
+        margin-bottom: 60px;
+        height: fit-content;
 
-            img {
-                margin: -180% -75%;
+        .lhs {
+            margin-left: 0;
+            width: 250px;
+            height: 250px;
+            border-radius: 1000px;
+        }
+
+        .rhs {
+            width: 100vw;
+            height: fit-content;
+
+            .intro-links {
+                width: 100%;
+                gap: 0;
             }
         }
     }
@@ -226,18 +327,35 @@
             flex: 1 1 auto;
         }
     }
+    
+    .skills {
+        .skills-list {
+            ul {
+                gap: 30px;
+                li {
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
 
     .notable-projects {
         .content {
             .project-card {
+                height: 300px;
                 .project-content {
                     @include flex(column, flex-start, center);
+
                     .lhs {
-                        width: 160px;
-                        height: auto;
+                        // width: 160px;
+                        height: 45%;
                     }
 
                     .rhs {
+                        @include flex(column, center);
                         gap: 5px;
                     }
                 }

@@ -2,12 +2,14 @@
 
 $primary: #2b2d31;
 $secondary: #313338;
-$tertiary: #383a40;
-$highlight: #3f4248;
+$tertiary: #d8d8d8;
+$contrast-light: #3f4248;
+$highlight: lightcoral;
 
 $text-color: rgb(225, 225, 225);
 
-$gutter-h: calc(9vw - 20px);
+$gutter-h: min(200px, 10vw);
+// Maybe change based on media queries
 
 @mixin flex($f: row, $j: space-around, $a: center) {
     display: flex;
@@ -26,56 +28,87 @@ $gutter-h: calc(9vw - 20px);
     padding: 0;
     margin: 0;
 
-    color: $text-color;
+    color: inherit;
     font-family: Montserrat, 'Courier New', Courier, monospace;
 }
 
-.text-xxs {font-size: 14px;}
-.text-xs {font-size: 16px;}
-.text-s {font-size: 20px;}
-.text-m {font-size: 32px;}
-.text-l {font-size: 40px;}
-.text-xl {font-size: 80px;}
+.text-xxs {font-size: 0.5rem;}
+.text-xs {font-size: 0.7rem;}
+.text-s {font-size: 1.1rem;}
+.text-m {font-size: 1.4rem;line-height: 2;}
+.text-l {font-size: 1.6rem;}
+.text-xl {font-size: 2rem;}
+
+h1 {
+    font-size: 2.6rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+
+    margin-bottom: 70px;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
 
 body {
-    @include flex(column, space-between, normal);
+    @include flex(column, space-between, center);
 
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    background-color: $secondary;
+    background-color: $primary;
 }
 
 main {
     @include flex(column, flex-start, normal);
-    flex-grow: 100;
+    // flex-grow: 100;
+    width: 100%;
+    max-width: calc(80rem + $gutter-h + $gutter-h);
 }
 
 header,
 footer {
-    @include flex($j: space-between);
+    @include flex($j: space-between, $a: center);
 
-    height: 50px;
-
-    padding: 0px $gutter-h;
-    background-color: $primary;
-    font-family: 'Montserrat';
+    // margin: 0px $gutter-h;
+    max-width: 80rem;
+    width: calc(100vw - $gutter-h - $gutter-h);
 }
 
 header {
-    width: 100vw;
-
-    border-bottom: 3px solid $tertiary;
+    height: 60px;
 
     a {
+        @include flex();
         width: 100%;
         height: 100%;
         width: 150px;
 
-        text-align: center;
-        padding-top: 11px;
+        // text-align: center;
+        // padding-top: 15px;
 
         background-color: $primary;
+
+        &:first-child {
+            justify-content: left;
+        }
+
+        &:hover {
+            color: $highlight;
+            transition: color .3s;
+        }
+        transition: color .2s ease-in;
     }
 
     .links {
@@ -85,25 +118,98 @@ header {
         padding: 0;
 
         a {
+            justify-content: right;
             width: 150px;
         }
-    }
-
-    a:hover {
-        background-color: $tertiary;
     }
 }
 
 footer {
-    border-top: 3px solid $tertiary;
+    @include flex($f: column, $j: flex-end);
+    height: 200px;
+    gap: 20px;
+    // padding-top: 90px;
+    padding-bottom: 50px;
+
+    .footer-links {
+        @include flex();
+        gap: 50px;
+
+        a {
+            @include flex();
+            gap: 4px;
+
+            &:hover {
+                color: $highlight;
+                transition: color .3s;
+            }
+            transition: color .2s ease-in;
+        }
+    }
 }
 
 a {
     text-decoration: none;
 }
 
-.hover-glow:hover {
-    background-color: $tertiary;
+ul {
+    list-style: none;
+}
+
+section {
+    padding-top: 70px;
+    // padding-bottom: 70px;
+    // padding-left: 150px;
+    // padding-right: 150px;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.content {
+    margin-left: $gutter-h;
+    margin-right: $gutter-h;
+    width: calc(100% - $gutter-h - $gutter-h);
+    max-width: 80rem;
+}
+
+.linkedin-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+}
+.github-icon {
+    width: 28px;
+    height: 28px;
+    margin: -7px -4px;
+}
+.resume-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.heading {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 50px;
+
+    &:after {
+        // Thank you https://stackoverflow.com/a/62358739
+        content: '';
+        flex: 10 1 auto;
+        border-bottom: solid 2px #fff;
+
+        align-self: center;
+    }
+
+    &:before {
+        content: "";
+        // flex: 1 1 auto;
+        width: calc($gutter-h - 15px);
+        border-bottom: solid 2px #fff;
+
+        align-self: center;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -111,15 +217,26 @@ a {
 }
 
 @media (max-width: 700px) {
-    .text-xxs {font-size: 12px;}
-    .text-xs {font-size: 14px;}
-    .text-s {font-size: 16px;}
-    .text-m {font-size: 22px;}
-    .text-l {font-size: 30px;}
+    .text-xxs {font-size: 0.5rem;}
+    .text-xs {font-size: 0.6rem;}
+    .text-s {font-size: 0.8rem;}
+    .text-m {font-size: 1rem;}
+    .text-l {font-size: 1.125rem;}
     .text-xl {font-size: 40px;}
 
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+
     header{
-        padding: 0;
+        width: 100%;
+        padding: 0 20px;
 
         overflow: hidden;
 

@@ -1,20 +1,10 @@
 @use "basics" as *;
 
-main {
-    padding: 0 calc($gutter-h + 20px);
-    margin-top: 60px;
-    width: 100vw;
-
-    line-height: 1.6;
-}
-
-h1, h2 {
-    margin-bottom: 30px;
-}
-
-.section {
-    margin-bottom: 45px;
-    padding: 0 12px;
+header,
+footer,
+section {
+    background-color: $primary;
+    color: $tertiary;
 }
 
 .img-holder {
@@ -28,24 +18,26 @@ h1, h2 {
     }
 }
 
+// Content example images
+.img-holder
 img {
     width: 500px;
 
-    border: 3px solid $primary;
+    border: 3px solid #242428;
     border-radius: 12px;
-    box-shadow: 0 0 20px 10px $primary;
+    box-shadow: 0 0 20px 10px #242428;
 }
 
 .banner-thingy-kinda {
     @include flex(row, space-around, center);
 
-    height: 400px;
+    height: calc(100vh - 60px - 70px);
+    max-height: 60rem;
     width: 100%;
+    // overflow-y: hidden;
 
-    margin-bottom: 60px;
-
-    gap: 10vw;
-    padding: 0 60px;
+    gap: 3vw;
+    padding: 0 20px 0 30px;
 
     .banner-text {
         @include flex(column, center, flex-start);
@@ -54,14 +46,20 @@ img {
         gap: 20px;
         a {
             padding: 10px 20px;
-            border: 3px solid $highlight;
+            border: 3px solid $contrast-light;
             border-radius: 20px;
             box-shadow: 0 0 15px 10px $primary;
+
+            &:hover {
+                background-color: $contrast-light;
+                transition: all 0.2s;
+            }
+            transition: all 0.1s;
         }
     }
 
     img {
-        width: 50%;       
+        width: 500px;   
     }
 }
 
@@ -83,7 +81,8 @@ h1 {
     background-color: rgba(0,0,0,0.4);
 
     img {
-        width: 80vw;
+        min-width: 400px;
+        // width: 100%;
         height: fit-content;
         max-height: 80vh;
         box-shadow: none;
@@ -96,10 +95,10 @@ h1 {
     .banner-thingy-kinda {
         @include flex(column, center, center);
         margin-top: 60px;
-        height: auto;
+        // height: auto;
         gap: 5vh;
 
-        .banner-text, img, h1, div {
+        .banner-text, h1, div {
             width: 100%;
         }
 

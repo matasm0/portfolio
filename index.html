@@ -1,70 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/home.css"/>
+    <link rel="stylesheet" href="./styles/home.css" />
     <title>Masato's Portfolio</title>
 </head>
+
 <body>
     <header>
-        <a id="home" class="text-s" href="index.html">Home</a>
-        <div class="links">
-            <a class="text-s" href="./pages/about.html">About</a>
-            <a class="text-s" href="./pages/projects/projects.html">Projects</a>
-            <a class="text-s" href="./pages/contact.html">Contact</a>
-        </div>
+        <a id="home" class="text-m" href="index.html">Home</a>
+        <nav class="links">
+            <a class="text-m" href="./pages/about.html">About</a>
+            <a class="text-m" href="./pages/projects/projects.html">Projects</a>
+            <a class="text-m" href="./pages/contact.html">Contact</a>
+        </nav>
     </header>
     <main>
-        <div class="profile section">
+        <section class="profile">
             <div class="lhs">
-                <img src="imgs/1713737267077.jpg" alt="Profile Picture"/>
+                <img src="imgs/1713737267077.jpg" alt="Profile Picture" />
             </div>
             <div class="rhs">
-                <div id="intro" class="text text-m">Hi, I'm Masato!<br>I'm a recent UCR graduate looking to apply my skills and knowledge.</div>
+                <h1 id="intro1" class="text">Hi, I'm Masato!</h1>
+                <div id="intro2" class="text text-l">I'm a recent UCR graduate looking to apply my skills and knowledge.</div>
+                <ul class="intro-links text-s">
+                    <li>
+                        <a href="https://linkedin.com/in/masatokereke" target="_blank">
+                            <img src="imgs/icons/linkedin-white.svg" alt="LinkedIn icon" class="linkedin-icon"/>
+                            <div>LinkedIn</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://matasm0.github.io/portfolio/" target="_blank">
+                            <img src="imgs/icons/github-white.svg" alt="Github icon" class="github-icon"/>
+                            <div>Github</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="imgs/icons/page-facing-up.svg" alt="Document icon" class="resume-icon"/>
+                            <div>Resume</div>
+                        </a>
+                    </li>
+                </ul>
                 <button id="contact" onclick="window.location.href = 'pages/contact.html'">
                     Contact Me!
                 </button>
             </div>
-        </div>
-        <div class="about section">
-            <h3 class="heading text-l">About Me</h3>
-            <div id="about" class="content text-s">Hi again. I'm Masato, a recent graduate from the University of California, Riverside. 
+        </section>
+
+        <section class="skills">
+            <h2 class="heading">Skills</h2>
+            <div class="skills-list content text-s">
+                <div class="languages-list">
+                    <h3>Languages</h3>
+                    <ul class="text-xs">
+                        <li>
+                            <img src="imgs/icons/c.svg" alt="C++ icon" />
+                            <span>C++</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/python.svg" alt="Python icon" />
+                            <span>Python</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/javascript-js.svg" alt="Javascript icon" />
+                            <span>Javascript</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/file-type-html.svg" alt="HTML icon" />
+                            <span>HTML</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/file-type-css.svg" alt="CSS icon" />
+                            <span>CSS</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/sql-database-generic.svg" alt="SQL icon" />
+                            <span>SQL</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/c-sharp-c.svg" alt="C# icon" />
+                            <span>C#</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Web Dev</h3>
+                    <ul class="text-xs">
+                        <li>
+                            <img src="imgs/icons/file-type-reactjs.svg" alt="React icon" />
+                            <span>React</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/bootstrap.svg" alt="Bootstrap icon" />
+                            <span>Bootstrap</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/file-type-angular.svg" alt="Angular icon" />
+                            <span>Angular</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/express-original-wordmark.svg" alt="Express icon" />
+                            <span>Express JS</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/mongodb-original.svg" alt="Mongodb icon" />
+                            <span>MongoDB</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/figma.svg" alt="Figma icon" />
+                            <span>Figma</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Dev Tools</h3>
+                    <ul class="text-xs">
+                        <li>
+                            <img src="imgs/icons/git.svg" alt="Git icon" />
+                            <span>Git</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/github.svg" alt="Github icon" />
+                            <span>Github</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/file-type-vscode.svg" alt="VSCode icon" />
+                            <span>VSCode</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/android-studio.svg" alt="Android Studio Icon" />
+                            <span>Android Studio</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Other</h3>
+                    <ul class="text-xs">
+                        <li>
+                            <img src="imgs/icons/unity-3d.svg" alt="Unity icon" />
+                            <span>Unity</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/api.svg" alt="APIs icon" />
+                            <span>RESTful APIs</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/agile.svg" alt="Agile icon" />
+                            <span>Agile</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/windows.svg" alt="Windows icon" />
+                            <span>Windows</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/linux.svg" alt="Linux icon" />
+                            <span>Linux</span>
+                        </li>
+                        <li>
+                            <img src="imgs/icons/android-os.svg" alt="Android icon" />
+                            <span>Android</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2 class="heading">About Me</h2>
+            <div id="about" class="content text-m">Hi again. I'm Masato, a recent graduate from the University of
+                California, Riverside.
                 I majored in computer science and graduated with a 3.41 GPA.<br><br>
-                Though I had some light coding experience before college, most of my knowledge comes from my 4 years at university. The program
-                taught C++, and I later went on to learn Python by myself, as well as Javascript/HTML/CSS. Over that time, I created many different
-                projects with many different languages and technologies, both in and out of school. I've worked with machine learning, operating systems,
+                Though I had some light coding experience before college, most of my knowledge comes from my 4 years at
+                university. The program
+                taught C++, and I later went on to learn Python by myself, as well as Javascript/HTML/CSS. Over that
+                time, I created many different
+                projects with many different languages and technologies, both in and out of school. I've worked with
+                machine learning, operating systems,
                 game development, web development; all the way down to reverse engineering and assembly.<br><br>
                 My favorite thing to do with code is
-                create programs that can help me in my day to day life, even if there may exist a better version of it already. I'm always eager to
+                create programs that can help me in my day to day life, even if there may exist a better version of it
+                already. I'm always eager to
                 learn and use new technologies to help me achieve my goals.
                 My dream is to create apps that people enjoy using, but most importantly, that I enjoy using.<br><br>
-                If you're interested, you can <a href="./pages/about.html">read more about me</a>, or check out some of <a href="./pages/projects/projects.html">my projects</a> below. Thanks for reading!
+                If you're interested, you can <a href="./pages/about.html">read more about me</a>, or check out some of
+                <a href="./pages/projects/projects.html">my projects</a> below. Thanks for reading!
             </div>
-        </div>
-        <div class="notable-projects section">
-            <h3 class="heading text-l">Notable Projects</h3>
+        </section>
+        <section class="notable-projects">
+            <h2 class="heading">Notable Projects</h2>
             <div class="content text-s">
                 <a class="project-card" href="./pages/projects/pw.html">
                     <div class="project-content hover-glow">
                         <div class="lhs">
-                            <img src="imgs/pw-main.png" alt=""/>
+                            <img src="imgs/pw-main.png" alt="" />
                         </div>
                         <div class="rhs">
                             <h4 class="title">PW</h4>
-                            <div class="description text-xs">A (currently) command line homebuilt password manager. Features encryption and backups and more.</div>
+                            <div class="description text-s">A (currently) command line homebuilt password manager.
+                                Features encryption and backups and more.</div>
                         </div>
                     </div>
                 </a>
                 <a href="./pages/projects/gdrive.html" class="project-card">
                     <div class="project-content hover-glow">
                         <div class="lhs">
-                            <img src="imgs/Google_Drive_-_New_Logo.png" alt=""/>
+                            <img src="imgs/Google_Drive_-_New_Logo.png" alt="" />
                         </div>
                         <div class="rhs">
                             <h4 class="title">GDrive Viewer</h4>
-                            <div class="description text-xs">An application for syncing a google drive cloud to your local device. Downloads changes from the cloud,
-                                as well as uploads any changes made locally. 
+                            <div class="description text-s">An application for syncing a google drive cloud to your
+                                local device. Downloads changes from the cloud,
+                                as well as uploads any changes made locally.
                             </div>
                         </div>
                     </div>
@@ -72,19 +222,38 @@
                 <a href="./pages/projects/oc_p7.html" class="project-card">
                     <div class="project-content hover-glow">
                         <div class="lhs">
-                            <img src="" alt=""/>
+                            <img src="" alt="" />
                         </div>
                         <div class="rhs">
                             <h4 class="title">Social Media Site</h4>
-                            <div class="description text-xs">An example social media site, similar to reddit. Allows for users to create accounts and posts, as well as comment and engage with other posts.</div>
+                            <div class="description text-s">An example social media site, similar to reddit. Allows for
+                                users to create accounts and posts, as well as comment and engage with other posts.
+                            </div>
                         </div>
                     </div>
                 </a>
             </div>
-        </div>
+        </section>
     </main>
     <footer>
-        <div class="placeholder">Thanks for checking out the site!</div>
+        <div class="text-m">Thanks for checking out the site!</div>
+        <nav class="footer-nav">
+            <ul class="footer-links text-s">
+                <li>
+                    <a href="https://linkedin.com/in/masatokereke" target="_blank">
+                        <img src="imgs/icons/linkedin-white.svg" alt="LinkedIn icon" class="linkedin-icon"/>
+                        <div>LinkedIn</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://matasm0.github.io/portfolio/" target="_blank">
+                        <img src="imgs/icons/github-white.svg" alt="Github icon" class="github-icon"/>
+                        <div>Github</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </footer>
 </body>
+
 </html>

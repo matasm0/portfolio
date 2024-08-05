@@ -1,15 +1,9 @@
 @use "basics" as *;
 
-main {
-    padding: 0 calc($gutter-h + 20px);
-    margin-top: 90px;
-    margin-bottom: 40px;
-    width: 100vw;
-}
-
-h1 {
-    font-size: 40px;
-    margin: 0;
+header,
+footer,
+section {
+    color: $tertiary;
 }
 
 #filters {
@@ -36,14 +30,14 @@ h1 {
         cursor: pointer;
 
         &:hover {
-            background-color: $highlight;
+            background-color: $contrast-light;
         }
 
         &.active {
             background-color: whitesmoke;
             color: $primary;
 
-            box-shadow: 0 0 15px 10px $highlight;
+            box-shadow: 0 0 15px 10px $contrast-light;
 
             &:hover {
                 background-color: rgb(187, 187, 187);
@@ -52,136 +46,148 @@ h1 {
     }
 }
 
-.project-list {
-    @include flex(row, flex-start, stretch);
-    flex-wrap: wrap;
+.projects {
+    @include flex($j: center);
+    .project-list {
+        @include flex(row, flex-start, stretch);
+        flex-wrap: wrap;
 
-    width: 100%;
-    height: 100%;
+        height: 100%;
+        width: 100%;
+        max-width: 100rem;
 
-    margin-top: 60px;
-    margin-bottom: 60px;
+        margin: 0 60px;
 
-    gap: 5%;
-
-    #empty {
-        display: none;
-    }
-
-    .project-card {
-        background-color: $highlight;
-        border-radius: 16px;
-        border: 3px solid $primary;
-        box-shadow: 0 0 20px 10px $primary;
-        overflow: hidden;
-        
-        width: 30%;
-
-        display: none;
-
-        &.show {
-            display: block;
-        }
-
-        .project-content {
-            @include flex(column, flex-start, center);
-
-            padding: 10px;
-            gap: 10px;
-
-            // height: 100%;
-            
-            .lhs {
-                @include flex(row, center, center);
-                height: 200px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                }
-            }
-            
-            .rhs {
-                @include flex(column, flex-start);
-                
-                height: 100%;
-                margin-top: 8px;
-                
-                gap: 10px;
-                
-                .description {
-                    text-align: center;
-                    line-height: 1.4;
-                }
-            }
-        }
-    }
-
-    &.empty {
-        justify-content: center;
-        align-items: center;
+        gap: 5%;
+        row-gap: 20px;
 
         #empty {
-            display: block;
+            display: none;
+        }
 
-            margin-top: 60px;
+        .project-card {
+            background-color: $contrast-light;
+            border-radius: 16px;
+            // border: 3px solid $primary;
+            box-shadow: 0 0 20px 10px #242428;
+            overflow: hidden;
+            
+            width: 30%;
+
+            display: none;
+
+            &.show {
+                display: block;
+            }
+
+            &:hover {
+                background-color: #4f5259;
+                box-shadow: 0 0 20px 2px #4f5259;
+                transition: all .2s;
+            }
+            transition: all .1s;
+
+            .project-content {
+                @include flex(column, flex-start, center);
+
+                padding: 10px;
+                gap: 10px;
+
+                // height: 100%;
+                
+                .lhs {
+                    @include flex(row, center, center);
+                    height: 200px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+                
+                .rhs {
+                    @include flex(column, flex-start);
+                    
+                    height: 100%;
+                    margin-top: 8px;
+                    
+                    gap: 10px;
+                    
+                    .description {
+                        text-align: center;
+                        line-height: 1.4;
+                    }
+                }
+            }
+        }
+
+        &.empty {
+            justify-content: center;
+            align-items: center;
+
+            #empty {
+                display: block;
+
+                margin-top: 60px;
+            }
         }
     }
-}
-
-footer {
-    margin-top: 60px;
 }
 
 @media (max-width: 1000px) {
-    .project-list {
-        flex-direction: column;
-        .project-card {
-            overflow: initial;
-            width: 100%;
-            .project-content {
-                @include flex(row, stretch, center);
-                gap: 30px;
-                padding-right: 20px;
-                img {
-                    width: 200px;
-                    height: auto;
+    .projects {
+        .project-list {
+            flex-direction: column;
+            .project-card {
+                overflow: initial;
+                width: 100%;
+                .project-content {
+                    @include flex(row, stretch, center);
+                    gap: 30px;
+                    padding-right: 20px;
+                    img {
+                        width: 200px;
+                        height: auto;
+                    }
                 }
             }
         }
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     #filters {
         @include flex(column, flex-start, flex-start);
     }
 
-    .project-list {
-        @include flex(column, flex-start, flex-start);
-        gap: 0;
-        margin-bottom: 0;
+    .projects {
+        .project-list {
+            @include flex(column, flex-start, flex-start);
+            gap: 0;
+            margin: 0;
+            row-gap: 15px;
 
-        &.empty {
-            #empty {
-                margin-top: 20px;
-                margin-bottom: 40px;
+            &.empty {
+                #empty {
+                    margin-top: 20px;
+                    margin-bottom: 40px;
+                }
             }
-        }
 
-        .project-card {
-            width: 100%;
-            height: fit-content;
-            overflow: initial;
-            margin-bottom: 60px;
+            .project-card {
+                width: 100%;
+                height: fit-content;
+                overflow: initial;
+                // margin-bottom: 60px;
 
-            .project-content {
-                flex-direction: column;
-                padding-right: 10px;
-                padding-bottom: 20px;
-                img {
-                    width: 160px;
-                    height: auto;
+                .project-content {
+                    flex-direction: column;
+                    padding-right: 10px;
+                    padding-bottom: 20px;
+                    img {
+                        width: 160px;
+                        height: auto;
+                    }
                 }
             }
         }
